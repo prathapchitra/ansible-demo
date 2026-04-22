@@ -9,4 +9,4 @@ keyed_groups:
     key: tags
 hostnames:
   # - private-ip-address
-  - ip-address
+  - 172.31.10.127
