@@ -17,10 +17,9 @@ pipeline {
 
                 ansiblePlaybook(
                     colorized: true,
-                    credentialsId: 'ansible_user_auth',
                     installation: 'Default',
                     inventory: 'inventory/dynamic.aws_ec2.yml',
-                    extras: "-e host_group=tag_${TagKey}_${TagValue} -e ansible_user=ubuntu",
+                    extras: "-e host_group=tag_${TagKey}_${TagValue} -e ansible_user=ubuntu --private-key /var/lib/jenkins/.ssh/your-key.pem",
                     playbook: 'playbook/ansible-demo-pb.yaml'
                 )
             }
